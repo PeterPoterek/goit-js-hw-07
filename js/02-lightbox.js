@@ -5,7 +5,7 @@ const galleryItemArr = [];
 
 const handleImageRender = () => {
   galleryItems.forEach((item) => {
-    const galleryItem = document.createElement("li");
+    const galleryItem = document.createElement("div");
     galleryItem.setAttribute("class", "gallery__item ");
 
     const image = document.createElement("img");
