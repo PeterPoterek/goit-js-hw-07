@@ -1,9 +1,7 @@
 import { galleryItems } from "./gallery-items.js";
-// Change code below this line
-
-console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery");
+const galleryItemArr = [];
 
 galleryItems.forEach((item) => {
   const galleryItem = document.createElement("li");
@@ -15,12 +13,15 @@ galleryItems.forEach((item) => {
   image.alt = item.description;
 
   galleryItem.append(image);
-  gallery.append(galleryItem);
+  galleryItemArr.push(galleryItem);
 
   galleryItem.addEventListener("click", () => {
     const instance = basicLightbox.create(`
     <img src="${item.original}" alt="${item.description}">
   `);
+
     instance.show();
   });
 });
+
+gallery.append(...galleryItemArr);
