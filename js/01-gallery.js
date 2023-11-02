@@ -9,10 +9,21 @@ galleryItems.forEach((item) => {
 
   const image = document.createElement("img");
   image.setAttribute("class", "gallery__image");
+  image.setAttribute("data-source", item.original);
   image.src = item.preview;
   image.alt = item.description;
 
-  galleryItem.append(image);
+  const link = document.createElement("a");
+  link.setAttribute("href", item.original);
+  link.setAttribute("class", "gallery__link");
+
+  link.append(image);
+
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+
+  galleryItem.append(link);
   galleryItemArr.push(galleryItem);
 
   galleryItem.addEventListener("click", () => {
