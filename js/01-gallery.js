@@ -40,6 +40,12 @@ const handleImageClick = () => {
   `);
 
     instance.show();
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        instance.close();
+      }
+    });
   });
 };
 
