@@ -33,8 +33,8 @@ const handleImageRender = () => {
 
 const handleImageClick = () => {
   gallery.addEventListener("click", (e) => {
-    const img = e.target.attributes[1].nodeValue;
-    const description = e.target.attributes[3].nodeValue;
+    const img = e.target.getAttribute("data-source");
+    const description = e.target.alt;
 
     const instance = basicLightbox.create(`
     <img src="${img}" alt="${description}">
