@@ -30,6 +30,7 @@ const handleImageRender = () => {
     gallery.append(...galleryItemArr);
   });
 };
+
 const handleImageClick = () => {
   gallery.addEventListener("click", (e) => {
     const img = e.target.attributes[1].nodeValue;
