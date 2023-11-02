@@ -5,7 +5,7 @@ const galleryItemArr = [];
 
 const handleImageRender = () => {
   galleryItems.forEach((item) => {
-    const galleryItem = document.createElement("li");
+    const galleryItem = document.createElement("div");
     galleryItem.setAttribute("class", "gallery__item ");
 
     const image = document.createElement("img");
@@ -20,19 +20,17 @@ const handleImageRender = () => {
 
     link.append(image);
 
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-    });
-
     galleryItem.append(link);
     galleryItemArr.push(galleryItem);
-
-    gallery.append(...galleryItemArr);
   });
+
+  gallery.append(...galleryItemArr);
 };
 
 const handleImageClick = () => {
   gallery.addEventListener("click", (e) => {
+    e.preventDefault();
+
     const img = e.target.getAttribute("data-source");
     const description = e.target.alt;
 
