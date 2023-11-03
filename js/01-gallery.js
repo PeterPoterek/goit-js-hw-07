@@ -34,6 +34,8 @@ const handleImageClick = () => {
     const img = e.target.getAttribute("data-source");
     const description = e.target.alt;
 
+    if (img === null) return;
+
     const instance = basicLightbox.create(`
     <img src="${img}" alt="${description}">
   `);
